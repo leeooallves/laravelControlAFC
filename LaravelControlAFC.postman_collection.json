@@ -1,0 +1,1625 @@
+{
+	"info": {
+		"_postman_id": "8e1d92fd-96bf-4b2a-9ebd-4b536064cc6c",
+		"name": "LaravelControlAFC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "LOGIN CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "cliente@cliente.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/login",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN FUNCIONARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "funcionario@funcionario.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/login",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/login",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Listar dado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url_base}}/cliente",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar dado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tipo",
+									"value": "pj",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Cliente atualização de Dados 2",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "11111111111",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "22222222",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "endereco 2",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "numero 2",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "bairro 2",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "cidade 2",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "PR",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/cliente",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Funcionarios",
+			"item": [
+				{
+					"name": "Clientes",
+					"item": [
+						{
+							"name": "Listar dados",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/funcionario/clientes",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"funcionario",
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar dado",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/funcionario/cliente/2",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"funcionario",
+										"cliente",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "email3@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "tipo",
+											"value": "pf",
+											"description": "'pj','pf'",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "00000000000",
+											"type": "text"
+										},
+										{
+											"key": "cep",
+											"value": "00000000",
+											"type": "text"
+										},
+										{
+											"key": "endereco",
+											"value": "rua abc",
+											"type": "text"
+										},
+										{
+											"key": "numero",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "bairro",
+											"value": "bairro",
+											"type": "text"
+										},
+										{
+											"key": "cidade",
+											"value": "cidade",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "PR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/funcionario/cliente",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"funcionario",
+										"cliente"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nome",
+											"value": "Cliente atualização de Dados 2",
+											"type": "text"
+										},
+										{
+											"key": "tipo",
+											"value": "pf",
+											"description": "pf,pj",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "11111111111",
+											"type": "text"
+										},
+										{
+											"key": "cep",
+											"value": "22222222",
+											"type": "text"
+										},
+										{
+											"key": "endereco",
+											"value": "endereco 2",
+											"type": "text"
+										},
+										{
+											"key": "numero",
+											"value": "numero 2",
+											"type": "text"
+										},
+										{
+											"key": "bairro",
+											"value": "bairro 2",
+											"type": "text"
+										},
+										{
+											"key": "cidade",
+											"value": "cidade 2",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "PR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/funcionario/cliente/1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"funcionario",
+										"cliente",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "tipo",
+											"value": "pj",
+											"type": "text"
+										},
+										{
+											"key": "nome",
+											"value": "Cliente atualização de Dados 2",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "11111111111",
+											"type": "text"
+										},
+										{
+											"key": "cep",
+											"value": "22222222",
+											"type": "text"
+										},
+										{
+											"key": "endereco",
+											"value": "endereco 2",
+											"type": "text"
+										},
+										{
+											"key": "numero",
+											"value": "numero 2",
+											"type": "text"
+										},
+										{
+											"key": "bairro",
+											"value": "bairro 2",
+											"type": "text"
+										},
+										{
+											"key": "cidade",
+											"value": "cidade 2",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "PR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/funcionario/cliente/1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"funcionario",
+										"cliente",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar dado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url_base}}/funcionario",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar dado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nome",
+									"value": "Funcionário atualização de Dados 2",
+									"type": "text"
+								},
+								{
+									"key": "funcao",
+									"value": "Aluno",
+									"type": "text"
+								},
+								{
+									"key": "salario",
+									"value": "1200.00",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "99999999999",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "11111111",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "endereco 2",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "numero 2",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "bairro 2",
+									"type": "text"
+								},
+								{
+									"key": "cidade",
+									"value": "cidade 2",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "PR",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/funcionario",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Funcionarios",
+					"item": [
+						{
+							"name": "Clientes",
+							"item": [
+								{
+									"name": "Listar dados",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{url_base}}/admin/funcionario/1/clientes",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"admin",
+												"funcionario",
+												"1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar dado",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{url_base}}/admin/funcionario/1/cliente/2",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"admin",
+												"funcionario",
+												"1",
+												"cliente",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Criar",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Nome do Usuário",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "email4@email.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "tipo",
+													"value": "pf",
+													"description": "'pj','pf'",
+													"type": "text"
+												},
+												{
+													"key": "telefone",
+													"value": "00000000000",
+													"type": "text"
+												},
+												{
+													"key": "cep",
+													"value": "00000000",
+													"type": "text"
+												},
+												{
+													"key": "endereco",
+													"value": "rua abc",
+													"type": "text"
+												},
+												{
+													"key": "numero",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "bairro",
+													"value": "bairro",
+													"type": "text"
+												},
+												{
+													"key": "cidade",
+													"value": "cidade",
+													"type": "text"
+												},
+												{
+													"key": "estado",
+													"value": "PR",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url_base}}/admin/funcionario/1/cliente",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"admin",
+												"funcionario",
+												"1",
+												"cliente"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Atualizar",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "nome",
+													"value": "Cliente atualização de Dados 2",
+													"type": "text"
+												},
+												{
+													"key": "tipo",
+													"value": "pf",
+													"description": "pf,pj",
+													"type": "text"
+												},
+												{
+													"key": "telefone",
+													"value": "11111111111",
+													"type": "text"
+												},
+												{
+													"key": "cep",
+													"value": "22222222",
+													"type": "text"
+												},
+												{
+													"key": "endereco",
+													"value": "endereco 2",
+													"type": "text"
+												},
+												{
+													"key": "numero",
+													"value": "numero 2",
+													"type": "text"
+												},
+												{
+													"key": "bairro",
+													"value": "bairro 2",
+													"type": "text"
+												},
+												{
+													"key": "cidade",
+													"value": "cidade 2",
+													"type": "text"
+												},
+												{
+													"key": "estado",
+													"value": "PR",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url_base}}/admin/funcionario/1/cliente/2",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"admin",
+												"funcionario",
+												"1",
+												"cliente",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Deletar",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{url_base}}/admin/funcionario/1",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"admin",
+												"funcionario",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Listar dado",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/admin/funcionario/1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"admin",
+										"funcionario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar dados",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/admin/funcionarios",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"admin",
+										"funcionarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Cliente atualização de Dados 3",
+											"type": "text"
+										},
+										{
+											"key": "funcao",
+											"value": "Aluno",
+											"type": "text"
+										},
+										{
+											"key": "salario",
+											"value": "1200.00",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "99999999999",
+											"type": "text"
+										},
+										{
+											"key": "cep",
+											"value": "11111111",
+											"type": "text"
+										},
+										{
+											"key": "endereco",
+											"value": "endereco 2",
+											"type": "text"
+										},
+										{
+											"key": "numero",
+											"value": "numero 2",
+											"type": "text"
+										},
+										{
+											"key": "bairro",
+											"value": "bairro 2",
+											"type": "text"
+										},
+										{
+											"key": "cidade",
+											"value": "cidade 2",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "PR",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "funcionario2@funcionario.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/admin/funcionario",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"admin",
+										"funcionario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nome",
+											"value": "Funcionário atualização de Dados 3",
+											"type": "text"
+										},
+										{
+											"key": "funcao",
+											"value": "Aluno",
+											"type": "text"
+										},
+										{
+											"key": "salario",
+											"value": "1200.00",
+											"type": "text"
+										},
+										{
+											"key": "telefone",
+											"value": "99999999999",
+											"type": "text"
+										},
+										{
+											"key": "cep",
+											"value": "11111111",
+											"type": "text"
+										},
+										{
+											"key": "endereco",
+											"value": "endereco 2",
+											"type": "text"
+										},
+										{
+											"key": "numero",
+											"value": "numero 2",
+											"type": "text"
+										},
+										{
+											"key": "bairro",
+											"value": "bairro 2",
+											"type": "text"
+										},
+										{
+											"key": "cidade",
+											"value": "cidade 2",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "PR",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/admin/funcionario/1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"admin",
+										"funcionario",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/admin/funcionario/1/cliente/2",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"admin",
+										"funcionario",
+										"1",
+										"cliente",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar dados",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url_base}}/admin",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar dado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url_base}}/admin/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Administrador 2",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "admin2@admin.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/admin",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Administrador",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "admin3@admin.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/admin/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"admin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
